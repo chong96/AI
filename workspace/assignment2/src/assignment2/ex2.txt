@@ -1,0 +1,22 @@
+Exercise 2.1
+1. In goal formulation, one decides which aspects are desired. The goal is set and one has to assess which states will
+fulfill the goal. In problem formulation one decides what states need to be considered and manipulated and what not. 
+So if problem formulation is done before goal formulation, one will not know what the goal is or what is desired so
+states to be considered would be unknown.
+
+2. a) If there were negative values, any optimal algorithm would traverse those paths since the goal would be to get
+to the goal with the least amount of weight and negative values would do that.
+b) It does help if we insist that step costs must be greater than or equal to negative constant c. 
+If c is the best case scenario, then paths x can be improved by multiplying c and x with cx.That means the best path
+has to be cx.
+c) If all the actions have negative costs but no net change to the state, then that means the agent will loop
+continuously.
+d) Although scenic routes are nice to drive through, its impractical to go on them every time. People only want to drive
+on scenic routes once or a couple times. To make the agents only traverse a certain amount of times and avoid looping,
+one can put a counter that goes up every time it hits that route so it can then be limited.
+e) A real world domain could be going to high school 7-2 or going to work from 9-5 everyday.
+
+2.2
+2) It is not necessary to check for repeated states, the algorithm will do the optimal choice.
+3) Humans have a hard time solving this problem because thinking logically about it can get confusing if you are not
+completely focused on every step and looking ahead to see how one can get to the goal state.

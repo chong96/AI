@@ -1,0 +1,17 @@
+4.1 
+1) Constraint satisfactory problem- Basically a problem where you are given certain constraints and you have to figure out a solution that does not break the
+rules of the constraints.
+Constraint- In general, something that stops something from happening. Something like a "border" or a "rule". In this case, no two adjacent regions can be the
+same color.
+Back-tracking search- Runs through nodes, then goes back and evaluates whether the node is useful in getting to the goal state.
+Back-jumping - Like back tracking, except it can skip levels instead of just going back up 1 level at a time.
+Min-conflicts- Search algorithm where a Given an initial assignment of values to all the variables of a constraint satisfactory problem, the algorithm randomly 
+selects a variable from the set of variables with conflicts violating one or more constraints of the CSP. Then it assigns to this variable the value that 
+minimizes the number of conflicts. 
+2) 18 ways. 3 for SA, 2 ways to color the other connecting 5 regions, and then 3 different ways to color T. So 3 x 2 x 3 = 18.
+
+4.2
+1) This problem in general is finding a way to color the 10 states using 4 colors without any adjacent states being the same color. The state space contains every
+combination of every color for every state. The goal-test is testing to see if any state has the same color as any of its neighbors, and if not, it passes. 
+The successor function is essentially creating a new "child" from two parents. From those two parents/maps, you use a genetic algorithm to split the genetics of 
+the parents and combine them into a child. Keep iterating through this until a child matches a goal state or the iteration count passes the maximum iterations. 

@@ -1,0 +1,16 @@
+6.1.1
+The standard approach would not work. There would be way too many variables and other things involved that the approach would have to be 
+modified. The state space would depend on the game. For example, for tennis, the state space would consist of the ball being anywhere in the
+lines of the court or out of bounds. Pool would consist of every combination of balls in different specific spots on the table. The size would 
+be continuous state space. In theory you would have to probably break time/space into tiles or add a physics engine or something of that sort
+to get an idea of a result of an action.
+
+6.1.2
+The algorithm changes by changing the assumption to be that each player will act in their best interests. Essentially the utility function will
+output a value for each player, and the algorithm will pick the utility set with the highest value for the whichever player turn it is. Alpha-beta
+pruning will not work because the whole idea is that what's good for max is bad for min. But without zero-sum assumption, the same state could be
+good for both min and max. You cannot just assume since max likes it that min won't and vice versa.
+
+6.2.1
+The amount of iterations without pruning in the first couple rounds where there are many actions is very high. With pruning the amount is dramatically
+reduced.

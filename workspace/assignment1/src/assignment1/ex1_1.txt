@@ -1,0 +1,28 @@
+Exercise 1
+1. Agent- Something that acts/reacts with the environment around it using sensors and other tools.
+Agent Function- Maps the entire sequence of perception into action.
+Agent Program- Takes the current percept and processes it.
+Rationality- "best outcome" principle when talking about rationality for AI. Doing the "right thing".
+Autonomy- the ability for an agent to not rely on the its designer but rather on its own percepts.
+Reflex Agent- an agent that's actions are based solely on the current percept.
+Model-based Agent- an agent with internal states.
+Goal-based Agent- an agent who's decision are made based on a specific "goal".
+Utility-based Agent- an agent who's decision are made based on a specific "goal" as well, but each option is
+weighted or prioritized
+Learning Agent- an agent that learns as it goes and critics performance.
+
+2. The performance measure is used to evaluate the behavior of the agent while the utility function is used
+by the agent to see which option is most desirable.
+
+3. a) Yes. You can implement different agent programs for an agent function.
+b) Yes
+c) Yes, if an agent was given to agent functions it would have to choose to do multiple things with the same 
+percept sequence.
+d) If there are n bits, then there are (number of actions)^2n possible programs. This is sufficient.
+
+4. a) No it does not require internal states. It just needs to know that if it moves it loses a point,
+it doesn't matter what state it is in.
+b) It does not make sense for the agent to learn from its experiences then. It would be beneficial to learn
+from the past if the squares stayed clean because then the agent would know to not move back to the same spots. 
+But since the squares can be re dirtied and the environment is unknown, the agent should just keep moving around
+trying to clean.

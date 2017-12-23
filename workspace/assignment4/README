@@ -1,0 +1,10 @@
+First, using the templates given, the map is initially created and the population is as well with a size of 25 individuals. In those individuals, they're starting
+colors are randomly generated at the beginning of each creation. I set the max amount of iterations to 1000, which most of the time there is a solution found
+within that amount. The way I calculated the fitness of an Individual is taking the number of borders - the number of conflicts. I implemented the randomSelection 
+method by first getting all the fitness scores of every individual in the population and summing them up. From there, for each individual in the population,
+I calculate the probability of them getting chosen for reproduction by dividing fitness/total fitness. After the two parents are chosen, I then randomly generate 
+a number from 0 to the amount of states. I then use that random number and from 0 to random number, I set the child's states to the color of its first parent. 
+Then I make the color of the child's remaining states from random number to amount of states the same as its second parent. For the mutation part, I first 
+randomly generate a number between 0-99. If that number is less than 10, it calls the mutate method in the Individual class. In that method, for each possible
+state, I randomly generate a number between 0-9. If the number is less than 1, I then randomly change the color of that state. The reproduction process is 
+repeated until a child is a goal state/satisfy all the constraints, or the iteration count goes over the maximum amount of iterations.

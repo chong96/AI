@@ -1,0 +1,54 @@
+5.1.1
+The problem is finding a way to color the states using 4 different colors, but no adjacent states can have the same color. The variables are all
+the states. The value domain is the domain of values (colors) that each state can be assigned. The constraints are the matching pairs of every
+touching state.
+
+5.1.2
+ONE RUN: Some states
+
+Iterations: 15
+{North Carolina=0, West Virginia=0, Mississippi=3, Tennessee=2, Kentucky=1, Georgia=1, Alabama=0, Florida=2, Virginia=3, South Carolina=2}
+Backtracking: 3989587
+
+Iterations: 11
+{North Carolina=0, West Virginia=0, Mississippi=0, Tennessee=3, Kentucky=2, Georgia=1, Florida=0, Alabama=2, Virginia=1, South Carolina=2}
+Backtracking with AC3: 2551814
+
+Iterations: 11
+{North Carolina=1, West Virginia=0, Mississippi=2, Tennessee=0, Kentucky=1, Georgia=2, Florida=0, Alabama=1, Virginia=2, South Carolina=0}
+Backtracking with forward checking: 3024799
+
+Iterations: 3
+{North Carolina=1, West Virginia=0, Mississippi=3, Tennessee=0, Kentucky=1, Georgia=3, Alabama=2, Florida=0, Virginia=3, South Carolina=2}
+Min Conflicts: 738131
+
+Clearly min-conflicts is the most efficient in regards to time and iterations. You can also see that implementing forward checking and AC3
+reduce the time and iterations needed to find a solution.
+
+ONE RUN: All states
+
+Iterations: 1459539
+{North Carolina=1, Indiana=3, Wyoming=1, Utah=0, Arizona=3, Montana=3, Kentucky=1, California=0, Kansas=1, Florida=3, Delaware=2, Pennsylvania=3, Mississippi=0, Iowa=1, Illinois=2, Texas=0, Connecticut=0, Georgia=0, Virginia=0, Maryland=1, Idaho=2, Oregon=3, Vermont=0, Maine=0, Tennessee=2, Oklahoma=2, Alabama=1, Arkansas=3, South Carolina=3, Washington=0, Nebraska=2, West Virginia=2, Colorado=3, Massachusetts=3, Missouri=0, Alaska=3, North Dakota=1, Wisconsin=0, Nevada=1, New York=1, Rhode Island=1, Hawaii=0, South Dakota=0, Minnesota=3, New Jersey=0, Michigan=1, New Mexico=1, New Hampshire=1, Louisiana=1, Ohio=0}
+Backtracking: 6701527197
+
+Iterations: 6864
+{North Carolina=1, Indiana=3, Wyoming=0, Utah=3, Arizona=1, Montana=1, Kentucky=1, Kansas=0, California=3, Florida=3, Delaware=3, Pennsylvania=1, Iowa=1, Mississippi=0, Texas=0, Illinois=0, Connecticut=0, Georgia=0, Maryland=0, Virginia=2, Idaho=2, Vermont=0, Oregon=1, Tennessee=3, Oklahoma=3, Maine=3, Alabama=1, Arkansas=1, South Carolina=3, Washington=3, Nebraska=3, West Virginia=3, Massachusetts=2, Colorado=1, Missouri=2, Alaska=3, North Dakota=3, Wisconsin=3, Nevada=0, New York=3, Rhode Island=3, Hawaii=3, South Dakota=2, Minnesota=0, New Jersey=0, Michigan=1, New Mexico=2, New Hampshire=1, Louisiana=3, Ohio=0}
+Backtracking with AC3: 42635428
+
+Iterations: 209
+{North Carolina=1, Indiana=0, Wyoming=0, Utah=3, Arizona=2, Montana=2, Kentucky=1, California=3, Kansas=0, Delaware=1, Florida=2, Pennsylvania=0, Mississippi=3, Iowa=1, Illinois=2, Texas=3, Connecticut=0, Georgia=3, Virginia=0, Maryland=3, Idaho=1, Vermont=3, Oregon=2, Maine=3, Oklahoma=2, Tennessee=2, Alabama=1, Arkansas=1, Washington=0, South Carolina=0, Nebraska=2, West Virginia=2, Massachusetts=1, Colorado=1, Missouri=3, Alaska=3, North Dakota=1, Wisconsin=3, Nevada=0, New York=2, Rhode Island=3, Hawaii=3, South Dakota=3, Minnesota=0, New Jersey=3, Michigan=2, New Mexico=0, New Hampshire=2, Louisiana=0, Ohio=3}
+Backtracking with forward checking: 16990708
+
+Iterations: 43
+{North Carolina=1, Indiana=3, Wyoming=1, Utah=0, Arizona=2, Montana=0, Kentucky=1, California=0, Kansas=1, Delaware=0, Florida=2, Pennsylvania=1, Iowa=1, Mississippi=0, Illinois=0, Texas=2, Connecticut=3, Georgia=0, Maryland=2, Virginia=0, Idaho=2, Oregon=1, Vermont=3, Maine=3, Oklahoma=3, Tennessee=3, Alabama=1, Arkansas=1, South Carolina=2, Washington=0, Nebraska=0, West Virginia=3, Colorado=2, Massachusetts=1, Missouri=2, Alaska=2, North Dakota=2, Wisconsin=3, Nevada=3, New York=2, Rhode Island=2, Hawaii=2, South Dakota=3, Minnesota=0, New Jersey=3, Michigan=1, New Mexico=1, New Hampshire=0, Louisiana=3, Ohio=0}
+Min Conflicts: 5326862
+
+For this one run min-conflicts found it the quickest but I think that is only because of the random generation of the map. Some times min-conflicts
+will run through 1000000 iterations and fail to find it. Also, sometimes backtracking with forward checking will return a null pointer exception
+and I am not sure why but for the majority of the time it returns a valid solution.
+
+5.1.3
+I have learned from both assignment 4 and assignment 5 that there are many ways to solve a particular problem. Solving it is not always the
+hard part but instead finding the most efficient one is usually the hardest task. From the algorithms I have done, min-conflict definitely seems
+to be preferable compared to the others when it is not that big of a problem. When all 50 states is the problem, the algorithms could solve it but
+it took a lot more iterations and sometimes even then min-conflicts would hit the max iterations of 1000000.

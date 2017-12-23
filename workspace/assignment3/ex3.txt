@@ -1,0 +1,18 @@
+Exercise 3
+3.1 For the algorithm to be guaranteed optimal, w has to be <= 1. 
+When w = 0, f(n) = 2g(n), which would be a Uniform cost search.
+When w = 1, f(n) = g(n) + h(n), which would be A*.
+When w = 2, f(n) = 2h(n), which would be Greedy best search.
+
+3.2
+1. The amount of states would be the amount x * y. There is an infinite amount of paths due to loops.
+2. The shortest path must consist of straight line segments joining vertices of polygons because a straight line is
+the shortest path between two points so the shortest path between two points with obstacles in the way is to wrap the
+path as close to a straight line around the obstacles as possible. A good state space would the points along the
+polygons along with the start and end goal, as all moves will involve starting and ending on one of these points.
+The size of the state space would be the sum of the perimeters of the polygons plus 2 for the start and end goal.
+3. The necessary functions needed to implement this would be: 
+A function/class that creates the grid as well as polygons.
+A node class that keeps track of previous nodes and calculate a score/weight.
+A successor class that will take a node/vertex and return the set of reachable nodes from that one node.
+A main node that can run through the processes and tell you the total distance and path it took. 

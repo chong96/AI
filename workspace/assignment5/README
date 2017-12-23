@@ -1,0 +1,14 @@
+README
+Using the templates given I first implemented the backtracking algorithm. To start off, I implemented the selectUnassignedVariable by randomly 
+generating a number and using that number to pick a random state in the variable list. I then get the possible values for that state using the 
+orderDomainValues method. After that I run through the possible values for that state and test which one will work. If it works, I assign it and
+then recursively call backtrack again. This is repeated until every state is given a color that does not violate any of the constraints. For the 
+forward checking algorithm, I got all the neighbors of the current state and then test those with its possible values. If it is inconsistent, I 
+remove that specific value from the neighbors domain of values. For AC3, I made a queue of all the possible arcs, and from there i ran through 
+every arc and tested the values of its two states. If the first state was assigned a value but the second state had no values that was 
+consistent with that first value assignment, I added that to a list. After it ran through all the values of the first state, I deleted all the 
+values from state1's domain of values that were added to the list to be deleted. For min-conflicts, I started off by implementing the method to 
+initially create a fully colored random map. From there, a random conflicted state was chosen. I then ran a for loop through all the possible 
+values that state could have, and calculated the amount of conflicts of each. I then took the minimum from that and assigned the state that color.
+I repeated this until the map was fully colored with no constraints violated. Also throughout the whole program I used the isConsistent method,
+which was just pretty much running through all the constraints and testing to see if any of the adjacent states had the same color.

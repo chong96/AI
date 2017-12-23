@@ -1,0 +1,9 @@
+To start off, I implemented the methods in TicTacToeState. For the updateUtility function I tested every possible case of winning the game and
+then tested which player it was that won and updated the utility accordingly. In the get actions method, I ran through the board to see what spots
+were still playable and then created actions for each of those spots with the computers "color" and added those actions to a list. In the getResult
+method, I create a newState and make the field and player the same as the current state and the player to move the opposite of the current state.
+I then add the current action and update the utility and return the new state. For the isTerminal method I first check if the utility != 0, and if
+it is it returns true. If not, I then run through the board to see if there are any spaces and if there are it returns false. Then in the MiniMax
+class I first get the list of possible actions for the space and run through them in a loop. For each action I call minValue. minValue essentially
+just runs through the possibilities of placing an X at a specific spot, then recursively calling maxValue, then minValue, etc.. until the board is
+done. It then returns the utility of the board.

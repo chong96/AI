@@ -1,0 +1,34 @@
+7.1.1
+Uploaded a PDF because it was easier to draw the tables by hand rather than type it out.
+
+7.1.2
+P(Toothache) - .108 + .012 + .016 + .064 = .2
+P(Bold)(Cavity) - .108 + .012 + .072 + .008 = .2
+				- .016 + .064 + .144 + .576 = .8
+				= <.2, .8>
+P(Bold)(Toothache | cavity) - <(.108 + .012)/.2, (.072 + .008)/.2>
+							= <.6, .4>
+P(Bold)(Toothache | cavity v catch) - First, compute cavity v catch - .108 + .012 + .072 + .008 + .016 + .144 = .416
+									  Then compute Toothache | cavity v catch - <(.108 + .012 + .072)/.416, (.016 + .064 + .144)/.416)>
+									= <0.4615, 0.5384>
+									
+7.1.3
+P(test | disease) = .99
+P(disease) = .0001
+P(disease | test) = P(test | disease) P(disease)/P(test)
+				  = P(test | disease) P(disease) / [P(test | disease) P(disease) + P(test | -disease) P(-disease)
+				  = .99 * .0001 / [.99 * .0001 + .01 * .9999]
+				  = 0.009804
+				  
+7.1.4
+P(BAR|BAR|BAR) = (1/4)^3 = 1/64 * 20 = 20/64
+P(BELL|BELL|BELL) = (1/4)^3 = 1/64 * 10 = 15/64
+P(LEMON|LEMON|LEMON) = (1/4)^3 = 1/64 * 5 = 5/64
+P(CHERRY|CHERRY|CHERRY) = (1/4)^3 = 1/64 * 3 = 3/64
+P(CHERRY|CHERRY|?) = (1/4)^2 - 1/64 = 3/64 * 2 = 2/64
+P(CHERRY|?|?) = (1/4) - 3/64 - 1/64 = 12/64 * 1 = 12/64
+A) Expected payout = 20 + 15 + 5 + 3 + 6 + 12 = 61/64
+B) Probability of winning on one spin = 1/64 + 1/64 + 1/64 + 1/64 + 3/64 + 12/64 = 19/64
+C) Made java program to run it 10000 times - submitted the program as well.
+   Mean - 1
+   Median - 1.331300

@@ -1,0 +1,11 @@
+First, I created a main class and node class. In the node class, it holds many different variables such as name, previous
+node, etc. In the main class, I first create a 25x25 array. In it, I randomly generate polygons, making the vertices
+nodes. From there, I used the Point/Point2D and Line/Line2D java class to connect the polygons. After that, I created my
+successor function. I made the starting node at [0][0] and the goal node at [24][24]. I had two lists of nodes, an
+open list and a closed list. I first put the starting node in the open list, then from there I calculated which other nodes
+could be reached from it by running a for loop through an array of edges that I had saved earlier while creating the board.
+From that set of possible next nodes, I ran through them again to find the one with the lowest A* score, and I added that
+one to the open list and all the others to the closed lists. I looped through this until either the goal was found or
+the open list was empty. I then added the the distance from the last node found to the total distance and looped through 
+all the other previous nodes and did the same. The code is a little messy because I was having a lot of trouble/debugging
+for a while so I had to try a lot of different things. 
